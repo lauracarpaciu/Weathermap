@@ -1,6 +1,8 @@
 package com.lauracarpaciu.demo.entity;
 
-import org.apache.catalina.authenticator.Constants;
+
+
+import com.lauracarpaciu.demo.util.Constants;
 
 import net.minidev.json.JSONObject;
 

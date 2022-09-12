@@ -4,14 +4,13 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import org.apache.catalina.authenticator.Constants;
+import com.lauracarpaciu.demo.util.Constants;
 
+import net.minidev.json.JSONArray;
 import net.minidev.json.JSONObject;
 
 public abstract class AbstractWeather extends AbstractResponse {
 	
-	private static final long serialVersionUID = 1L;
-
 	private int weatherCount;
 	private List<Weather> weatherList;
 	
@@ -45,5 +44,5 @@ public abstract class AbstractWeather extends AbstractResponse {
 	
 	public int getWeatherCount() {
 		return this.weatherCount;
-	}
+	}}
 	
