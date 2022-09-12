@@ -15,7 +15,7 @@ import java.io.Serializable;
 
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
-public class BaseEntity implements Serializable {
+public class BaseEntity {
 
     @CreatedDate
     private Long createdAt;

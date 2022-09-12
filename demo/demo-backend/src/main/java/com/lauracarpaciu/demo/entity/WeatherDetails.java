@@ -1,5 +1,5 @@
 package com.lauracarpaciu.demo.entity;
 
-public class WeatherDetails {
+public class WeatherDetails extends AbstractWeather {
 
 }

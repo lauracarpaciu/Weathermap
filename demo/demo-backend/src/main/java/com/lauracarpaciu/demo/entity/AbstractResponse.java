@@ -20,7 +20,7 @@ public class AbstractResponse {
 	}
 	
 	/**
-	 * @return true if response code is valid (downloaded and parsed correctly), otherwise false
+	 * @return true if response code is valid ( and parsed correctly), otherwise false
 	 */
 	public boolean isValid() {
 		return this.responseCode == 200;
