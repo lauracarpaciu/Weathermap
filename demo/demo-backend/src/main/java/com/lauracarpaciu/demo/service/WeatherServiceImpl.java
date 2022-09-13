@@ -32,16 +32,20 @@ public class WeatherServiceImpl implements WeatherService {
     private final OWMAddress owmAddress;
     private final OWMResponse owmResponse;
     private final FormatResponse formatResponse;
+    private final WMRepository wmRepository;
     
-  
-    WMRepository wmRepository;
     @Autowired
-    public WeatherServiceImpl() {
-        this.owmAddress = new OWMAddress();
-        this.owmResponse = new OWMResponse();
-        this.formatResponse = new FormatResponse();
-    }
-    
+    public WeatherServiceImpl(OWMAddress owmAddress, OWMResponse owmResponse, FormatResponse formatResponse,
+			WMRepository wmRepository) {
+		super();
+		this.owmAddress = owmAddress;
+		this.owmResponse = owmResponse;
+		this.formatResponse = formatResponse;
+		this.wmRepository = wmRepository;
+	}
+     
+  
+
 	public JSONObject getWeatherDetailsByCityName(String cityName, String appId){
 		String response = owmResponse.httpGETResponseFromOWM(
 				owmAddress.getOwmAddressUrl(Constants.URL_WEATHER, Constants.PARAM_CITY_NAME, cityName, appId));
