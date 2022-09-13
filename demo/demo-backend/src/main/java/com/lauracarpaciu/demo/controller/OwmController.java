@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.lauracarpaciu.demo.entity.Weather;
 import com.lauracarpaciu.demo.service.WeatherService;
 
 
@@ -19,11 +20,11 @@ import com.lauracarpaciu.demo.service.WeatherService;
 @RequestMapping("/api")
 public class OwmController {
 	
-	private static final Logger Log = LoggerFactory.getLogger(OwmController.class);
+private static final Logger Log = LoggerFactory.getLogger(OwmController.class);
 	
-
+	
 	WeatherService weatherService;
-	
+
 	@Autowired
 	public OwmController(WeatherService weatherService) {
 		super();

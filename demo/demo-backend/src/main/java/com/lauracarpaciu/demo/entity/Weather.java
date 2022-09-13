@@ -4,7 +4,10 @@ package com.lauracarpaciu.demo.entity;
 import java.util.Objects;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Table;
+
 
 
 
@@ -17,7 +20,9 @@ public class Weather  extends BaseEntity {
 	 * 
 	 */
 	private static final long serialVersionUID = 4010460117921111941L;
-
+	
+	@javax.persistence.Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long Id;
 	
 	private long cityId;
