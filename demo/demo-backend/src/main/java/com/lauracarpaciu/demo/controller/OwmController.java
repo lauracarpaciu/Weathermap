@@ -1,16 +1,19 @@
 package com.lauracarpaciu.demo.controller;
 
-import java.lang.System.Logger;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.lauracarpaciu.demo.service.WeatherService;
 
-import net.minidev.json.JSONObject;
 
 @RestController
 @RequestMapping("/api")
@@ -18,8 +21,14 @@ public class OwmController {
 	
 	private static final Logger Log = LoggerFactory.getLogger(OwmController.class);
 	
-	@Autowired
+
 	WeatherService weatherService;
+	
+	@Autowired
+	public OwmController(WeatherService weatherService) {
+		super();
+		this.weatherService = weatherService;
+	}
 
 	@GetMapping("/weather/{cityName}&{appId}")
 	public ResponseEntity<?> getWeatherDetailsByCityName(

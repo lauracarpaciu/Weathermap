@@ -2,7 +2,7 @@ package com.lauracarpaciu.demo.entity;
 
 import com.lauracarpaciu.demo.util.Constants;
 
-import net.minidev.json.JSONObject;
+import org.json.JSONObject;
 
 public class FormatResponse {
 	

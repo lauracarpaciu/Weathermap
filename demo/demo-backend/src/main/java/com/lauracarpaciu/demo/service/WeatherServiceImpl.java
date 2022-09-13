@@ -1,8 +1,19 @@
 package com.lauracarpaciu.demo.service;
 
-import java.lang.System.Logger;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.Collections;
+import java.util.zip.GZIPInputStream;
+import java.util.zip.Inflater;
+import java.util.zip.InflaterInputStream;
 
-import org.hibernate.annotations.common.util.impl.LoggerFactory;
+import org.json.JSONArray;
+import org.json.JSONObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,8 +23,6 @@ import com.lauracarpaciu.demo.entity.Weather;
 import com.lauracarpaciu.demo.entity.WeatherDetails;
 import com.lauracarpaciu.demo.util.Constants;
 
-import net.minidev.json.JSONArray;
-import net.minidev.json.JSONObject;
 
 @Service("/owmService")
 public class WeatherServiceImpl implements WeatherService {
@@ -24,9 +33,9 @@ public class WeatherServiceImpl implements WeatherService {
     private final OWMResponse owmResponse;
     private final FormatResponse formatResponse;
     
-    @Autowired
+  
     WMRepository wmRepository;
-    	
+    @Autowired
     public WeatherServiceImpl() {
         this.owmAddress = new OWMAddress();
         this.owmResponse = new OWMResponse();
@@ -71,7 +80,7 @@ public class WeatherServiceImpl implements WeatherService {
 		weatherObj.setWeather(formatResponse.formatWeatherListToString(weatherDetails));
 		weatherObj.setTemp(weatherDetails.getMainInstance().getTemp());
 		
-		owmRepository.save(weatherObj);
+		wmRepository.save(weatherObj);
 		
 		return formatResponse.formatJSONResponse(weatherObj);
 	}

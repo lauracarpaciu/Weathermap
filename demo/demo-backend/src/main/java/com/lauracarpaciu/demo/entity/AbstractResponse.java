@@ -2,11 +2,18 @@ package com.lauracarpaciu.demo.entity;
 
 
 
+import java.io.Serializable;
+
+import org.json.JSONObject;
+
 import com.lauracarpaciu.demo.util.Constants;
 
-import net.minidev.json.JSONObject;
-
-public class AbstractResponse {
+public class AbstractResponse implements Serializable{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	
 	private final int responseCode;
 	private final String rawResponse;

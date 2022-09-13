@@ -1,15 +1,22 @@
 package com.lauracarpaciu.demo.entity;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 import com.lauracarpaciu.demo.util.Constants;
 
-import net.minidev.json.JSONArray;
-import net.minidev.json.JSONObject;
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 
 public abstract class AbstractWeather extends AbstractResponse {
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	
 	private int weatherCount;
 	private List<Weather> weatherList;
@@ -20,6 +27,7 @@ public abstract class AbstractWeather extends AbstractResponse {
 		weatherCount = 0;
 		weatherList = Collections.emptyList();
 	}
+	
 	
 	AbstractWeather(JSONObject jsonObj) {
 		super(jsonObj);
@@ -44,5 +52,57 @@ public abstract class AbstractWeather extends AbstractResponse {
 	
 	public int getWeatherCount() {
 		return this.weatherCount;
-	}}
+	}
 	
+	
+public static class Main implements Serializable {
+		
+	
+		
+		/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+		private final float temp;
+		
+		Main(){
+			super();
+			this.temp = Float.NaN;
+		}
+		
+		Main(JSONObject jsonObj) {
+			this.temp = (jsonObj != null) ? jsonObj.optFloat(Constants.JSON_MAIN_TEMP) : Float.NaN;
+		}
+
+		public float getTemp() {
+			return this.temp;
+		}
+		
+	}
+	
+	public static class Weather implements Serializable {
+		
+		
+		
+		/**
+		 * 
+		 */
+		private static final long serialVersionUID = 1L;
+		private final String description;
+		
+		Weather(){
+			this.description = null;
+		}
+		
+		Weather(JSONObject jsonObj) {
+			this.description = (jsonObj != null) ? jsonObj.optString(Constants.JSON_WEATHER_DESC) : null;
+		}
+
+		public String getWeatherDescription() {
+			return this.description;
+		}
+		
+	}
+	
+		
+}

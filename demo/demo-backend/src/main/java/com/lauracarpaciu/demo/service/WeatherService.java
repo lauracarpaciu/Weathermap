@@ -1,6 +1,7 @@
 package com.lauracarpaciu.demo.service;
 
-import net.minidev.json.JSONArray;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 public interface WeatherService {
 

@@ -2,10 +2,16 @@ package com.lauracarpaciu.demo.entity;
 
 import com.lauracarpaciu.demo.util.Constants;
 
-import net.minidev.json.JSONObject;
+
+import org.json.JSONObject;
 
 public class WeatherDetails extends AbstractWeather {
 
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	
 	private final long cityId;
 	private final String cityName;
@@ -33,6 +39,18 @@ public class WeatherDetails extends AbstractWeather {
 		return this.main;
 	}
 	
+public static class Main extends AbstractWeather.Main {
+		
+		private static final long serialVersionUID = 1L;
 
+		Main(){
+			super();
+		}
+		
+		Main(JSONObject jsonObj) {
+			super(jsonObj);
+		}
+		
+	}
 	
 }
