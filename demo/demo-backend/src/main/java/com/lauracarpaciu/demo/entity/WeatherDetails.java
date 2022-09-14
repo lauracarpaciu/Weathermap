@@ -7,10 +7,6 @@ import org.json.JSONObject;
 
 public class WeatherDetails extends AbstractWeather {
 
-	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	
 	private final long cityId;

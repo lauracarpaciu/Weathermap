@@ -16,9 +16,6 @@ import javax.persistence.Table;
 public class Weather  extends BaseEntity {
 
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 4010460117921111941L;
 	
 	@javax.persistence.Id

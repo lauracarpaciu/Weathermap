@@ -46,3 +46,4 @@ nbdist/
 *.iws
 *.iml
 *.ipr
+/.metadata/

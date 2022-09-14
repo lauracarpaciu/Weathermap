@@ -23,7 +23,6 @@ public abstract class AbstractWeather extends AbstractResponse {
 	
 	AbstractWeather(){
 		super();
-		
 		weatherCount = 0;
 		weatherList = Collections.emptyList();
 	}
@@ -55,14 +54,10 @@ public abstract class AbstractWeather extends AbstractResponse {
 	}
 	
 	
-public static class Main implements Serializable {
-		
-	
-		
-		/**
-	 * 
-	 */
+	public static class Main implements Serializable {
+
 	private static final long serialVersionUID = 1L;
+	
 		private final float temp;
 		
 		Main(){
@@ -81,13 +76,9 @@ public static class Main implements Serializable {
 	}
 	
 	public static class Weather implements Serializable {
-		
-		
-		
-		/**
-		 * 
-		 */
+
 		private static final long serialVersionUID = 1L;
+		
 		private final String description;
 		
 		Weather(){
