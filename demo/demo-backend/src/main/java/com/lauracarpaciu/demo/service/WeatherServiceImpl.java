@@ -32,12 +32,11 @@ public class WeatherServiceImpl implements WeatherService {
     private final OWMAddress owmAddress;
     private final OWMResponse owmResponse;
     private final FormatResponse formatResponse;
-    
     @Autowired
     WMRepository wmRepository;
-	
 
-    public WeatherServiceImpl() {
+
+	public WeatherServiceImpl() {
         this.owmAddress = new OWMAddress();
         this.owmResponse = new OWMResponse();
         this.formatResponse = new FormatResponse();
