@@ -10,9 +10,6 @@ import com.lauracarpaciu.demo.util.Constants;
 
 public class AbstractResponse implements Serializable{
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	
 	private final int responseCode;

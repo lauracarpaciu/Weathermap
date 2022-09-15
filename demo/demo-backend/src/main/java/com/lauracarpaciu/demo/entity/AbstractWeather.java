@@ -12,10 +12,7 @@ import org.json.JSONObject;
 
 
 public abstract class AbstractWeather extends AbstractResponse {
-	
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 	
 	private int weatherCount;

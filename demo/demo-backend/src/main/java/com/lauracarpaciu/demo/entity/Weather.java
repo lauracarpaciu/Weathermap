@@ -9,8 +9,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Table;
 
 
-
-
 @Entity
 @Table(name="weatherTable")
 public class Weather  extends BaseEntity {
