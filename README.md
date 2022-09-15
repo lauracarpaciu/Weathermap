@@ -25,7 +25,7 @@ contains the entities classes that are mapped at the database level (ORM).
 
 service module:
 
-contains the service classes that stores the business logic code of the app. 
+contains the service classes that stores the business logic code of the app:
 
 Spring Boot does not generate code or make edits to your files. Instead, when you start your application, Spring Boot dynamically wires up beans and settings and applies them to your application context.
 
