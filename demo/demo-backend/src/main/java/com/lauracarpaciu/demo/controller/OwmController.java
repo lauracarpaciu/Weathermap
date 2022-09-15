@@ -10,6 +10,7 @@ import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -18,22 +19,24 @@ import org.springframework.web.bind.annotation.RestController;
 import com.lauracarpaciu.demo.service.WeatherService;
 
 
-@RestController
+@Controller
 @RequestMapping("/api")
 public class OwmController {
 	
 private static final Logger Log = LoggerFactory.getLogger(OwmController.class);
 	
-	@Autowired
-	WeatherService weatherService;
+	
+	private final WeatherService weatherService;
 
+	@Autowired
 	public OwmController(WeatherService weatherService) {
 		super();
 		this.weatherService = weatherService;
 	}
-	
 
-    @RequestMapping(value = "/weather/{cityName}&{appId}",method = RequestMethod.GET)
+
+
+	@RequestMapping(value = "/weather/{cityName}&{appId}",method = RequestMethod.GET)
     public ResponseEntity<?> getWeatherDetailsByCityName(@PathVariable("cityName") String cityName, @PathVariable("appId") String appId) throws Exception {
     	Log.info("Fetching weather details with cityName: {}", cityName);
     	 assert cityName != null;

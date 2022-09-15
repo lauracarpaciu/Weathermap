@@ -24,27 +24,24 @@ import com.lauracarpaciu.demo.entity.WeatherDetails;
 import com.lauracarpaciu.demo.util.Constants;
 
 
-@Service("/owmService")
+@Service()
 public class WeatherServiceImpl implements WeatherService {
-	
+
 	private static final Logger Log = LoggerFactory.getLogger(WeatherServiceImpl.class);
 	
     private final OWMAddress owmAddress;
     private final OWMResponse owmResponse;
     private final FormatResponse formatResponse;
-    private final WMRepository wmRepository;
     
     @Autowired
-    public WeatherServiceImpl(OWMAddress owmAddress, OWMResponse owmResponse, FormatResponse formatResponse,
-			WMRepository wmRepository) {
-		super();
-		this.owmAddress = owmAddress;
-		this.owmResponse = owmResponse;
-		this.formatResponse = formatResponse;
-		this.wmRepository = wmRepository;
-	}
-     
-  
+    WMRepository wmRepository;
+	
+
+    public WeatherServiceImpl() {
+        this.owmAddress = new OWMAddress();
+        this.owmResponse = new OWMResponse();
+        this.formatResponse = new FormatResponse();
+    }
 
 	public JSONObject getWeatherDetailsByCityName(String cityName, String appId){
 		String response = owmResponse.httpGETResponseFromOWM(
